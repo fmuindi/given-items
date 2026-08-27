@@ -44,7 +44,7 @@ export function ItemCard({ listing }: { listing: Listing }) {
           {listing.title}
         </div>
         <div className="text-[12.5px] font-semibold text-ink-400">
-          {listing.condition} · {listing.city}, {listing.state}
+          {listing.condition}
           <span className="mx-1">·</span>
           {listing.postedLabel}
         </div>

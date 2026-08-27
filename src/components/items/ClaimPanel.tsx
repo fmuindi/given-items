@@ -89,11 +89,15 @@ function ClaimPanelBody({ listing, reserved }: { listing: Listing; reserved: boo
       <div className="mt-4 flex flex-col gap-2.5 text-[12.5px] text-ink-500">
         <div className="flex items-start gap-2">
           <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-green-700" />
-          <span>Verified by GivenItems.org staff before publication.</span>
+          <span>
+            {listing.verified
+              ? "Verified by GivenItems.org staff before publication."
+              : "Staff verification is still pending for this listing."}
+          </span>
         </div>
         <div className="flex items-start gap-2">
           <Truck className="mt-0.5 h-4 w-4 shrink-0 text-green-700" />
-          <span>{listing.deliveryType} · {listing.city}, {listing.state} area</span>
+          <span>{listing.deliveryType} · ships from our regional hub</span>
         </div>
         <div className="flex items-start gap-2">
           <Info className="mt-0.5 h-4 w-4 shrink-0 text-green-700" />

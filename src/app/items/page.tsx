@@ -11,7 +11,7 @@ import type { ItemsSearchParams } from "@/lib/filters";
 export const metadata: Metadata = {
   title: "Browse free items",
   description:
-    "Search verified, staff-checked items available now — appliances, furniture, tools, electronics and more. Every item is $0.",
+    "Browse donated items available now — appliances, furniture, tools, electronics and more. Every item is $0.",
 };
 
 export default async function ItemsPage({
@@ -55,7 +55,7 @@ export default async function ItemsPage({
           {heading}
         </h1>
         <p className="mt-1 text-[14px] text-ink-500">
-          {listings.length} verified {listings.length === 1 ? "item" : "items"} near Columbus, OH
+          {listings.length} {listings.length === 1 ? "item" : "items"} donated so far
         </p>
       </div>
 

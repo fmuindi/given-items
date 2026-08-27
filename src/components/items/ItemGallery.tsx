@@ -28,7 +28,7 @@ export function ItemGallery({
       <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] bg-page sm:aspect-[16/10]">
         {mainUrl ? (
           // eslint-disable-next-line @next/next/no-img-element -- external donor photo
-          <img src={mainUrl} alt={title} className="h-full w-full object-cover" />
+          <img src={mainUrl} alt={title} className="h-full w-full object-contain" />
         ) : (
           <PlaceholderPhoto icon={icon} tone={tone} iconClassName="h-20 w-20 sm:h-24 sm:w-24" />
         )}
@@ -55,14 +55,14 @@ export function ItemGallery({
               type="button"
               onClick={() => setActive(i)}
               className={cn(
-                "aspect-square overflow-hidden rounded-[8px] outline-offset-2",
+                "flex aspect-square items-center justify-center overflow-hidden rounded-[8px] bg-page outline-offset-2",
                 active === i && "ring-2 ring-green-700"
               )}
               aria-label={`Show photo ${i + 1} of ${title}`}
               aria-current={active === i}
             >
               {/* eslint-disable-next-line @next/next/no-img-element -- external donor photo */}
-              <img src={url} alt="" className="h-full w-full object-cover" />
+              <img src={url} alt="" className="h-full w-full object-contain" />
             </button>
           ))}
         </div>

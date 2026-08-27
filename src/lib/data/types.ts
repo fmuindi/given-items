@@ -48,4 +48,6 @@ export interface Listing {
   photoIcon: ItemIcon;
   /** Real donor photos, when available. Falls back to the icon placeholder when empty. */
   photoUrls: string[];
+  /** Has staff actually completed the verification checklist for this listing? */
+  verified: boolean;
 }

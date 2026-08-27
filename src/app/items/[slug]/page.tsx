@@ -24,7 +24,7 @@ export async function generateMetadata({
   if (!listing) return {};
   return {
     title: listing.title,
-    description: `${listing.condition} condition, ${listing.city}, ${listing.state}. Free item — staff verified. ${listing.description}`,
+    description: `${listing.condition} condition. Free item. ${listing.description}`,
   };
 }
 
@@ -65,6 +65,7 @@ export default async function ItemDetailPage({
             icon={listing.photoIcon}
             tone={listing.photoTone}
             title={listing.title}
+            verified={listing.verified}
           />
 
           <div className="mt-5 flex flex-wrap items-center gap-2">
@@ -80,7 +81,7 @@ export default async function ItemDetailPage({
             {listing.title}
           </h1>
           <p className="mt-1.5 text-[14px] font-semibold text-ink-500">
-            {listing.city}, {listing.state} area · Listed{" "}
+            Listed{" "}
             {new Date(listing.postedDate).toLocaleDateString("en-US", {
               month: "long",
               day: "numeric",
