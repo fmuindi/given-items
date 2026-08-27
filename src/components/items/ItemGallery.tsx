@@ -55,14 +55,14 @@ export function ItemGallery({
               type="button"
               onClick={() => setActive(i)}
               className={cn(
-                "flex aspect-square items-center justify-center overflow-hidden rounded-[8px] bg-page outline-offset-2",
+                "aspect-square overflow-hidden rounded-[8px] outline-offset-2",
                 active === i && "ring-2 ring-green-700"
               )}
               aria-label={`Show photo ${i + 1} of ${title}`}
               aria-current={active === i}
             >
               {/* eslint-disable-next-line @next/next/no-img-element -- external donor photo */}
-              <img src={url} alt="" className="h-full w-full object-contain" />
+              <img src={url} alt="" className="h-full w-full object-cover" />
             </button>
           ))}
         </div>
