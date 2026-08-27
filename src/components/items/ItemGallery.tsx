@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ShieldCheck, Camera } from "lucide-react";
 import { PlaceholderPhoto } from "@/components/ui/PlaceholderPhoto";
-import { cn } from "@/lib/utils";
+import { cn, imagekitSquareThumb } from "@/lib/utils";
 import type { ItemIcon, PhotoTone } from "@/lib/data/types";
 
 export function ItemGallery({
@@ -62,7 +62,7 @@ export function ItemGallery({
               aria-current={active === i}
             >
               {/* eslint-disable-next-line @next/next/no-img-element -- external donor photo */}
-              <img src={url} alt="" className="h-full w-full object-cover" />
+              <img src={imagekitSquareThumb(url, 200)} alt="" className="h-full w-full object-cover" />
             </button>
           ))}
         </div>

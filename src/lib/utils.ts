@@ -12,6 +12,25 @@ export function formatCurrency(cents: number) {
   }).format(cents / 100);
 }
 
+/**
+ * Donor photos vary wildly in framing — a close-up product shot next to a
+ * wide shot of the whole room. A plain center object-fit crop can't tell
+ * those apart. ImageKit (the CDN these photos are served from) can: its
+ * `fo-auto` focus mode uses saliency detection to pick the crop region
+ * itself, so a square thumbnail actually centers on the item instead of
+ * whatever happens to be in the middle of the original frame.
+ */
+export function imagekitSquareThumb(url: string, size = 600) {
+  try {
+    const u = new URL(url);
+    if (!u.hostname.endsWith("imagekit.io")) return url;
+    u.searchParams.set("tr", `f-auto,q-auto,w-${size},h-${size},fo-auto`);
+    return u.toString();
+  } catch {
+    return url;
+  }
+}
+
 export function relativeTime(iso: string) {
   const then = new Date(iso).getTime();
   const now = Date.now();

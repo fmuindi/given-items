@@ -1,5 +1,5 @@
 import { PlaceholderPhoto } from "@/components/ui/PlaceholderPhoto";
-import { cn } from "@/lib/utils";
+import { cn, imagekitSquareThumb } from "@/lib/utils";
 import type { ItemIcon, PhotoTone } from "@/lib/data/types";
 
 export function ItemPhoto({
@@ -22,7 +22,7 @@ export function ItemPhoto({
   return (
     // eslint-disable-next-line @next/next/no-img-element -- external donor photos, not project-owned assets
     <img
-      src={url}
+      src={imagekitSquareThumb(url)}
       alt={alt}
       loading="lazy"
       className={cn("h-full w-full object-cover", className)}
