@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PlaceholderPhoto } from "@/components/ui/PlaceholderPhoto";
+import { ItemPhoto } from "@/components/ui/ItemPhoto";
 import { Badge } from "@/components/ui/Badge";
 import { formatCurrency } from "@/lib/utils";
 import type { Listing } from "@/lib/data/types";
@@ -11,7 +11,12 @@ export function ItemCard({ listing }: { listing: Listing }) {
       className="group flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-line-soft bg-surface shadow-card transition-all hover:-translate-y-0.5 hover:border-green-700 hover:shadow-card-hover"
     >
       <div className="relative aspect-square">
-        <PlaceholderPhoto icon={listing.photoIcon} tone={listing.photoTone} />
+        <ItemPhoto
+          url={listing.photoUrls[0]}
+          alt={listing.title}
+          icon={listing.photoIcon}
+          tone={listing.photoTone}
+        />
         <div className="absolute left-2.5 top-2.5">
           {listing.status === "reserved" ? (
             <Badge tone="reserved">Reserved</Badge>

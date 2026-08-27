@@ -4,7 +4,14 @@ import { buildItemsHref, type ItemsSearchParams } from "@/lib/filters";
 import { categories } from "@/lib/data/categories";
 import type { Condition } from "@/lib/data/types";
 
-const conditions: Condition[] = ["Like new", "Good", "Fair", "Working", "Needs repair"];
+const conditions: Condition[] = [
+  "Like new",
+  "Good",
+  "Fair",
+  "Working",
+  "Needs repair",
+  "Pending review",
+];
 
 export function FilterPanel({ current }: { current: ItemsSearchParams }) {
   const hasFilters = Boolean(current.category || current.condition);

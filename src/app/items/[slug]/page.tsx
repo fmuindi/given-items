@@ -60,7 +60,12 @@ export default async function ItemDetailPage({
 
       <div className="grid gap-8 lg:grid-cols-[1fr_340px]">
         <div>
-          <ItemGallery icon={listing.photoIcon} tone={listing.photoTone} title={listing.title} />
+          <ItemGallery
+            photoUrls={listing.photoUrls}
+            icon={listing.photoIcon}
+            tone={listing.photoTone}
+            title={listing.title}
+          />
 
           <div className="mt-5 flex flex-wrap items-center gap-2">
             {listing.status === "reserved" ? (

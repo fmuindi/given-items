@@ -1,4 +1,4 @@
-export type Condition = "Like new" | "Good" | "Fair" | "Working" | "Needs repair";
+export type Condition = "Like new" | "Good" | "Fair" | "Working" | "Needs repair" | "Pending review";
 
 export type ListingStatus = "available" | "reserved" | "claimed" | "archived";
 
@@ -11,7 +11,10 @@ export type ItemIcon =
   | "tools"
   | "electronics"
   | "vehicle"
-  | "kitchen";
+  | "kitchen"
+  | "sports"
+  | "decor"
+  | "clothing";
 
 export type PhotoTone = "navy" | "green" | "amber" | "slate";
 
@@ -43,4 +46,6 @@ export interface Listing {
   weight: string;
   photoTone: PhotoTone;
   photoIcon: ItemIcon;
+  /** Real donor photos, when available. Falls back to the icon placeholder when empty. */
+  photoUrls: string[];
 }

@@ -40,8 +40,26 @@ export const categories: Category[] = [
   {
     slug: "vehicles",
     name: "Vehicles",
-    blurb: "Cars and riding equipment, reviewed case by case.",
+    blurb: "Cars, riding equipment and parts, reviewed case by case.",
     icon: "vehicle",
+  },
+  {
+    slug: "sports-outdoor",
+    name: "Sports & outdoor",
+    blurb: "Bikes, fitness equipment and outdoor gear.",
+    icon: "sports",
+  },
+  {
+    slug: "home-decor",
+    name: "Home & decor",
+    blurb: "Rugs, lighting, curtains and other home textiles.",
+    icon: "decor",
+  },
+  {
+    slug: "clothing",
+    name: "Clothing & accessories",
+    blurb: "Shoes, clothing and small personal items.",
+    icon: "clothing",
   },
 ];
 

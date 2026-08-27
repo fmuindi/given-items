@@ -6,6 +6,9 @@ import {
   Tv,
   Car,
   UtensilsCrossed,
+  Dumbbell,
+  Lamp,
+  Shirt,
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -19,6 +22,9 @@ const icons: Record<ItemIcon, LucideIcon> = {
   electronics: Tv,
   vehicle: Car,
   kitchen: UtensilsCrossed,
+  sports: Dumbbell,
+  decor: Lamp,
+  clothing: Shirt,
 };
 
 const tones: Record<PhotoTone, string> = {
